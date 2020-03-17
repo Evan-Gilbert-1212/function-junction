@@ -1,40 +1,85 @@
-/**
+/*
  * 1) Define a function max() that takes two numbers as arguments
  * and returns the largest of them. Use the if-then-else
  * construct available in Javascript.
  */
+const max = (x, y) => {
+  let intArray = []
 
-// ...
+  if (typeof x === 'number') {
+    intArray.push(x)
+  }
 
-/**
+  if (typeof y === 'number') {
+    intArray.push(y)
+  }
+
+  if (intArray.length > 0) {
+    return Math.max.apply(null, intArray)
+  } else {
+    return NaN
+  }
+}
+
+/*
  * 2) Define a function maxOfThree() that takes three
  * numbers as arguments and returns the largest of them.
  */
+const maxOfThree = (x, y, z) => {
+  const intArray = []
 
-// ...
+  if (typeof x == 'number') {
+    intArray.push(x)
+  }
+
+  if (typeof y == 'number') {
+    intArray.push(y)
+  }
+
+  if (typeof z == 'number') {
+    intArray.push(z)
+  }
+
+  if (intArray.length > 0) {
+    return Math.max.apply(null, intArray)
+  } else {
+    return NaN
+  }
+}
 
 /*
  * 3) Define a function sum() that takes two numbers as
  * arguments and computes the sum of those two numbers.
  */
-
-// ...
+const sum = (x, y) => {
+  return x + y
+}
 
 /*
  * 4) Define a function sumOfArray that calculates the sum of
  * all the numbers in an array.
  */
+const sumOfArray = intArray => {
+  if (intArray.length > 0) {
+    let sum = intArray.reduce(function(a, b) {
+      return a + b
+    })
 
-// ...
+    return sum
+  } else {
+    return 0
+  }
+}
 
-/**
+/*
  * 5) Write a function isVowel() that takes a character (i.e. a string of length 1)
  * and returns true if it is a vowel, false otherwise.
  */
+const isVowel = char => {
+  return 'AEIOUaeiou'.includes(char)
+}
 
-// ...
-
-/**
+/*
  * 6) Write a function rovarspraket() that will translate
  * a text into a "rövarspråket". That is, double every
  * consonant and place an occurrence of "o" in between.
@@ -42,28 +87,53 @@
  * For example, rovarspraket("this is fun") should
  * return the string "tothohisos isos fofunon".
  */
+const rovarspraket = inputString => {
+  let output = ''
 
-// ...
+  for (let i = 0; i < inputString.length; i++) {
+    if (!'aeiou'.includes(inputString[i])) {
+      output = output + inputString[i] + 'o' + inputString[i]
+    } else {
+      output = output + inputString[i]
+    }
+  }
 
-/**
+  return output
+}
+
+/*
  * 7) Define a function reverse() that computes
  * the reversal of a string. For example,
  * reverse("skoob") should return the
  * string "books".
  */
+const reverse = inputString => {
+  return inputString
+    .split('')
+    .reverse()
+    .join('')
+}
 
-// ...
-
-/**
+/*
  * 8) Write a function findLongestWord() that takes an
  * string returns the first, longest word in the array.
  *
  * i.e. findLongestWord("book dogs") should return "book"
  */
+const findLongestWord = inputString => {
+  let longestWord = ''
+  let wordArray = inputString.split(' ')
 
-// ...
+  wordArray.forEach(word => {
+    if (word.length > longestWord.length) {
+      longestWord = word
+    }
+  })
 
-/**
+  return longestWord
+}
+
+/*
  * NOTE: Don't modify anything below this line...
  */
 
